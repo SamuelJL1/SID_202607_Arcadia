@@ -34,4 +34,4 @@ En conjunto, este sistema pretende mejorar la experiencia de los usuarios al dar
 
 [`Acuerdos_Equipo.md`](docs/Acuerdos_Equipo.md)
 
-[`Acta_Reunion_1.md`](docs/Acta_Reunion_1.md)
+[`Acta_Reuniones.md`](docs/Acta_Reuniones.md)

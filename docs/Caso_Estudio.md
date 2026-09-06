@@ -15,9 +15,12 @@ En este documento presentamos la propuesta de nuestro proyecto **Arcadia**, corr
 **Fuente:** Steam (Valve Corporation)
 https://store.steampowered.com/
 
-En Steam, los usuarios tienden a tener bibliotecas grandes de videojuegos, pero la plataforma no ofrece herramientas que les permitan almacenar sus propias estadísticas de uso general, comparar su progreso con otros usuarios, guardar reseñas personales detalladas o analizar su comportamiento como jugadores a lo largo del tiempo.
+En Steam, los usuarios acumulan bibliotecas grandes de videojuegos a lo largo del tiempo, pero la plataforma no les ofrece herramientas para llevar un control organizado de esa actividad: no pueden almacenar estadísticas propias de uso, comparar su progreso con el de otros jugadores dentro de su grupo de amigos, guardar reseñas personales detalladas ni hacer seguimiento a su comportamiento como jugadores período a período, por eso se desea implementar un sistema que permita adicionar estas herramientas faltante llamado Arcadia.
 
-Esto dificulta que el usuario tenga una visión clara y organizada de su actividad e inversión en videojuegos. Nuestro objetivo es desarrollar un sistema que supla con estas necesidades.
+Detrás de cada juego que un usuario adquiere hay una empresa desarrolladora responsable de crearlo y de dar seguimiento a las reseñas que recibe, como insumo para el diseño de sus próximos títulos. A su vez, cada juego solo llega a la biblioteca de los usuarios porque un administrador de la plataforma lo publicó, y ese mismo administrador tiene la potestad de retirarlo si deja de cumplir con los estándares de Steam; para tomar esas decisiones, también se apoya en las reseñas y calificaciones que los usuarios registran.
+
+Un usuario, entonces, no solo posee juegos: acumula tiempo jugado en cada uno, avanza en logros que puede tener alcanzados o pendientes, y puede compararse con otros usuarios de su círculo cercano. Esta falta de visibilidad, tanto para el jugador individual como para quienes están detrás del juego, dificulta que exista una visión clara y organizada de la actividad, el progreso y la inversión en videojuegos dentro del ecosistema. Nuestro objetivo es desarrollar un sistema que cubra estas necesidades para los tres roles involucrados: usuarios, empresas desarrolladoras y administradores de la plataforma.
+
 
 ---
 
@@ -34,24 +37,5 @@ Esto dificulta que el usuario tenga una visión clara y organizada de su activid
 
 4. **Reseñas y calificaciones internas:**
    Presenta los juegos mejor valorados según las reseñas y puntuaciones registradas por los usuarios.
-
----
-
-## Entidades
-
-1. **Usuario:**
-   Datos personales, nombre de perfil, ID de plataforma, fecha de registro y tiempo de juego.
-
-2. **Juego:**
-   Título, género, desarrollador, fecha de lanzamiento y precio.
-
-3. **Biblioteca:**
-   Relación entre usuario y los juegos que posee; fecha de adquisición.
-
-4. **Logro:**
-   Nombre, descripción, estado (alcanzado / no alcanzado) y juego asociado.
-
-5. **Reseña:**
-   Comentario, calificación numérica, fecha, usuario y juego asociados.
 
 ---
