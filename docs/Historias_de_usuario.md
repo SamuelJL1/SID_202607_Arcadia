@@ -99,3 +99,48 @@
 | Yo como | Usuario |
 | Quiero | ordenar mi biblioteca según la cantidad de logros pendientes por juego |
 | Para | decidir qué título jugar si mi objetivo es avanzar más en logros 
+
+
+
+| Historia N°| 18 |
+|---|---|
+| Yo como | empresa desarrolladora |
+| Quiero | registrar un nuevo videojuego en el sistema |
+| Para | que quede asociado a mi catálogo y disponible para ser publicado en la plataforma |
+ 
+| Historia N°| 19 |
+|---|---|
+| Yo como | empresa desarrolladora |
+| Quiero | editar la información de un videojuego que ya registré (descripción, precio, género) |
+| Para | mantener actualizados los datos de mis títulos publicados |
+ 
+| Historia N°| 20 |
+|---|---|
+| Yo como | empresa desarrolladora |
+| Quiero | consultar las reseñas recibidas por mis juegos |
+| Para | identificar fortalezas y debilidades de cara al desarrollo de futuros títulos |
+ 
+| Historia N°| 21 |
+|---|---|
+| Yo como | administrador de la plataforma |
+| Quiero | publicar un juego registrado por una empresa desarrolladora |
+| Para | que quede disponible en la tienda para los usuarios |
+ 
+| Historia N°| 22 |
+|---|---|
+| Yo como | administrador de la plataforma |
+| Quiero | retirar un juego de la plataforma |
+| Para | eliminar títulos que no cumplan con los estándares de calidad o las políticas de Steam |
+ 
+| Historia N°| 23 |
+|---|---|
+| Yo como | administrador de la plataforma |
+| Quiero | consultar las reseñas y calificaciones de los juegos publicados |
+| Para | evaluar cuáles tienen buen desempeño y cuáles deberían ser revisados o retirados |
+ 
+| Historia N°| 24 |
+|---|---|
+| Yo como | administrador de la plataforma |
+| Quiero | ver estadísticas generales de la plataforma (juegos más jugados, mejor calificados, con más usuarios activos) |
+| Para | tener una visión global del comportamiento de la comunidad y apoyar decisiones sobre el catálogo |
+ 
