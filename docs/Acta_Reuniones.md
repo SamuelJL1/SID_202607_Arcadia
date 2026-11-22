@@ -352,3 +352,223 @@ Como resultado de la reunión, se establecieron los ajustes que debían aplicars
 - Validación de la versión corregida del modelo relacional.
 - Revisión final de las restricciones y las reglas de negocio.
 - Consolidación de la documentación del modelo de datos.
+
+# Acta de Reunión No. 7
+**Proyecto: Arcadia**
+
+---
+
+## Datos de la reunión
+
+- **Tema:** Implementación de scripts DDL y DML de la base de datos
+- **Fecha:** 24/10/2026
+- **Hora:** 9:00 a.m. – 10:00 a.m.
+- **Lugar:** Discord
+- **Próxima reunión:** 14/11/2026.
+
+---
+
+## Integrantes
+
+| Nombre | Institución | Asistió | No Asistió |
+|---|---|---|---|
+| Samuel Jiménez | ICESI | x | |
+| Victoria Mejía | ICESI | x | |
+| Alejandro Sandoval | ICESI | x | |
+| Jorge García | ICESI | x | |
+| Matius Montealegre | ICESI | x | |
+
+---
+
+## Agenda
+
+- Revisión del modelo relacional para iniciar la implementación de la base de datos.
+- Elaboración y documentación del script DDL.
+- Definición de las restricciones de integridad de las tablas.
+- Preparación del script DML con los datos de prueba necesarios.
+- Organización de las actividades para desarrollar los reportes SQL.
+
+---
+
+## Desarrollo del tema
+
+Durante esta reunión, el equipo se enfocó en avanzar con la implementación de la base de datos de Arcadia, tomando como referencia el modelo relacional previamente definido. Se revisó la estructura de las tablas, sus atributos y las relaciones existentes, con el propósito de trasladar correctamente el diseño a los scripts SQL.
+
+Se comenzó con la elaboración del script DDL, definiendo la creación de las tablas, sus respectivas claves primarias y foráneas, y las restricciones necesarias para garantizar la integridad de la información. También se revisó que los tipos de datos y las condiciones establecidas fueran coherentes con las reglas de negocio del proyecto.
+
+Posteriormente, se discutió la preparación del script DML, teniendo en cuenta que los datos de prueba debían ser suficientes para generar los reportes propuestos inicialmente. Se estableció como requisito contar con al menos diez registros para cada reporte, procurando que la información permitiera probar diferentes escenarios y relaciones entre las tablas.
+
+Adicionalmente, se acordó que los scripts debían estar documentados y organizados dentro de la carpeta `src` del repositorio. El equipo también identificó la necesidad de realizar pruebas de ejecución para detectar posibles errores en la creación de tablas y en la inserción de los datos.
+
+Como resultado, se definió continuar con la construcción de los scripts DDL y DML y avanzar posteriormente con las consultas SQL necesarias para los reportes del proyecto.
+
+---
+
+## Compromisos
+
+| Actividad | Responsable | Fecha de Entrega |
+|---|---|---|
+| Elaborar y documentar el script DDL de la base de datos | Samuel Jiménez / Jorge García | 31/10/2026 |
+| Preparar los inserts DML con los datos necesarios para los reportes | Victoria Mejía / Alejandro Sandoval | 07/11/2026 |
+| Verificar las claves primarias, foráneas y restricciones de integridad | Matius Montealegre / Jorge García | 07/11/2026 |
+| Revisar la ejecución de los scripts y corregir posibles errores | Todos | 14/11/2026 |
+
+---
+
+## Agenda tentativa próxima reunión
+
+- Revisión de los scripts DDL y DML.
+- Verificación de los registros insertados.
+- Desarrollo y validación de las consultas SQL para los reportes.
+- Revisión de los requerimientos de implementación PL/SQL.
+
+---
+
+# Acta de Reunión No. 8
+**Proyecto: Arcadia**
+
+---
+
+## Datos de la reunión
+
+- **Tema:** Desarrollo y validación de consultas SQL y reportes
+- **Fecha:** 14/11/2026
+- **Hora:** 9:00 a.m. – 10:00 a.m.
+- **Lugar:** Discord
+- **Próxima reunión:** 21/11/2026.
+
+---
+
+## Integrantes
+
+| Nombre | Institución | Asistió | No Asistió |
+|---|---|---|---|
+| Samuel Jiménez | ICESI | x | |
+| Victoria Mejía | ICESI | x | |
+| Alejandro Sandoval | ICESI | x | |
+| Jorge García | ICESI | x | |
+| Matius Montealegre | ICESI | x | |
+
+---
+
+## Agenda
+
+- Seguimiento a la elaboración de los scripts DDL y DML.
+- Verificación de los datos insertados en la base de datos.
+- Desarrollo de las consultas SQL correspondientes a los reportes.
+- Revisión del uso de JOIN, agrupamientos y ordenamientos.
+- Definición de los elementos PL/SQL que se implementarán.
+
+---
+
+## Desarrollo del tema
+
+En esta reunión, el equipo realizó el seguimiento de las actividades asignadas anteriormente, revisando el avance de los scripts DDL y DML. Se verificó que la estructura de la base de datos correspondiera con el modelo relacional y que las inserciones permitieran contar con información suficiente para generar los reportes definidos en las primeras etapas del proyecto.
+
+Posteriormente, se trabajó en el desarrollo de las consultas DQL, teniendo en cuenta los requerimientos establecidos para la Entrega 3. Se revisó la necesidad de utilizar diferentes tipos de JOIN, incluyendo INNER JOIN y OUTER JOIN, con el propósito de relacionar adecuadamente la información de las tablas y contemplar registros que pudieran no tener correspondencia en otras entidades.
+
+También se analizaron las consultas que requerían agrupamientos y funciones de agregación para resumir la información, así como los criterios de ordenamiento para presentar los resultados de manera clara. Adicionalmente, se tuvo en cuenta la implementación de al menos una consulta que utilizara TOP, según los requisitos de la entrega.
+
+El equipo acordó que cada consulta debía incluir un comentario con su descripción en lenguaje natural, explicando qué información obtiene y cuál es su utilidad dentro del proyecto. Asimismo, se revisó que los resultados obtenidos fueran coherentes con los datos almacenados y con los reportes propuestos inicialmente.
+
+Finalmente, se discutieron los elementos PL/SQL que se desarrollarían para complementar la implementación de la base de datos. Se estableció trabajar en un procedimiento almacenado, una función y un trigger, procurando que cada uno respondiera a una necesidad específica del sistema y estuviera debidamente documentado.
+
+Como resultado de la reunión, se definió continuar con la validación de los reportes y completar los elementos PL/SQL, además de avanzar en la documentación de los riesgos asociados al uso de herramientas de inteligencia artificial generativa en un contexto profesional.
+
+---
+
+## Compromisos
+
+| Actividad | Responsable | Fecha de Entrega |
+|---|---|---|
+| Finalizar las consultas SQL de los reportes definidos | Samuel Jiménez / Alejandro Sandoval | 17/11/2026 |
+| Verificar los JOIN, agrupamientos, ordenamientos y uso de TOP | Victoria Mejía / Matius Montealegre | 18/11/2026 |
+| Desarrollar el procedimiento almacenado, la función y el trigger | Jorge García / Samuel Jiménez | 19/11/2026 |
+| Documentar la funcionalidad de los elementos PL/SQL | Todos | 20/11/2026 |
+| Elaborar la reflexión sobre los riesgos del uso de IAG | Victoria Mejía / Alejandro Sandoval | 20/11/2026 |
+
+---
+
+## Agenda tentativa próxima reunión
+
+- Revisión de los elementos PL/SQL implementados.
+- Validación final de los reportes y sus resultados.
+- Documentación del uso de IAG y sus riesgos.
+- Verificación de la estructura y contenido del repositorio.
+- Preparación de la sustentación del proyecto.
+
+---
+
+# Acta de Reunión No. 9
+**Proyecto: Arcadia**
+
+---
+
+## Datos de la reunión
+
+- **Tema:** Revisión final de la Entrega 3 y preparación de la sustentación
+- **Fecha:** 21/11/2026
+- **Hora:** 9:00 a.m. – 10:00 a.m.
+- **Lugar:** Discord
+- **Próxima reunión:** Por definir.
+
+---
+
+## Integrantes
+
+| Nombre | Institución | Asistió | No Asistió |
+|---|---|---|---|
+| Samuel Jiménez | ICESI | x | |
+| Victoria Mejía | ICESI | x | |
+| Alejandro Sandoval | ICESI | x | |
+| Jorge García | ICESI | x | |
+| Matius Montealegre | ICESI | x | |
+
+---
+
+## Agenda
+
+- Revisión general de los scripts DDL, DML, DQL y PL/SQL.
+- Validación del funcionamiento del procedimiento, la función y el trigger.
+- Revisión de la documentación y los riesgos del uso de IAG.
+- Verificación de la estructura completa del repositorio.
+- Organización de los temas y responsabilidades para la sustentación.
+
+---
+
+## Desarrollo del tema
+
+Durante esta reunión, el equipo realizó una revisión general de los avances correspondientes a la Entrega 3 del proyecto Arcadia, con el objetivo de verificar que los componentes solicitados estuvieran implementados, documentados y organizados correctamente.
+
+Inicialmente, se revisaron los scripts DDL y DML, comprobando que la creación de las tablas, las restricciones de integridad y los datos insertados fueran coherentes con el modelo relacional. También se verificó que la información disponible permitiera generar los reportes definidos y que las consultas DQL incluyeran los requerimientos solicitados, como agrupamientos, INNER JOIN, OUTER JOIN, ordenamientos y TOP.
+
+Posteriormente, se revisaron los elementos desarrollados en PL/SQL, correspondientes al procedimiento almacenado, la función y el trigger. Se comprobó que cada uno tuviera una funcionalidad definida, que respondiera a una necesidad del sistema y que su documentación explicara su propósito y funcionamiento.
+
+Otro de los puntos tratados fue la documentación del uso de inteligencia artificial generativa durante el desarrollo del proyecto. El equipo revisó la importancia de registrar los prompts utilizados y reflexionó sobre los riesgos que pueden presentarse en un contexto profesional, como la generación de código incorrecto, errores en las consultas, problemas de seguridad y la dependencia excesiva de estas herramientas. Se resaltó la necesidad de validar los resultados generados y comprender las soluciones implementadas.
+
+Adicionalmente, se verificó la organización del repositorio, incluyendo el archivo README, la carpeta de documentación, los modelos conceptual y relacional, los scripts de implementación y la bitácora de reuniones. Se acordó comprobar que los enlaces y archivos estuvieran disponibles y correctamente organizados para facilitar su revisión.
+
+Finalmente, el equipo organizó los temas que se presentarían durante la sustentación, distribuyendo las responsabilidades para explicar el contexto del proyecto, los modelos de datos, la implementación SQL, los reportes, los elementos PL/SQL y la reflexión sobre el uso de IAG. Se estableció que la presentación debía ser una síntesis del trabajo realizado, haciendo énfasis en las decisiones técnicas más importantes y en la relación entre los requerimientos y la solución desarrollada.
+
+Como resultado de la reunión, se definieron los últimos ajustes y verificaciones necesarios para consolidar la entrega, procurando que todos los integrantes conocieran el funcionamiento general del proyecto y estuvieran preparados para responder las preguntas durante la sustentación.
+
+---
+
+## Compromisos
+
+| Actividad | Responsable | Fecha de Entrega |
+|---|---|---|
+| Realizar la revisión final de los scripts SQL y PL/SQL | Todos | 22/11/2026 |
+| Verificar la documentación y los enlaces del repositorio | Victoria Mejía / Matius Montealegre | 22/11/2026 |
+| Finalizar la bitácora de prompts y la documentación de riesgos de IAG | Alejandro Sandoval / Jorge García | 23/11/2026 |
+| Preparar las diapositivas y organizar la presentación | Samuel Jiménez / Victoria Mejía | 23/11/2026 |
+| Revisar el contenido de la sustentación y practicar la exposición | Todos | 24/11/2026 |
+
+---
+
+## Agenda tentativa próxima reunión
+
+- Verificación de los últimos ajustes de la entrega.
+- Ensayo general de la sustentación.
+- Distribución definitiva de los tiempos de exposición.
+- Preparación para responder preguntas sobre las decisiones de diseño e implementación del proyecto.
