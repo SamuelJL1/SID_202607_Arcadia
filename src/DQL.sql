@@ -314,3 +314,86 @@ FROM   GAME_STUDIOS gs
        INNER JOIN USERS u                 ON u.id = c.USERS_ID
 WHERE  gs.nit = '900111222'
 ORDER BY promedio_del_juego DESC, vg.name, c.rating DESC;
+
+-- =====================================================================
+-- R2. LOGROS ALCANZADOS VS. PENDIENTES
+-- Descripción: para cada juego de cada biblioteca muestra cuántos logros
+-- tiene el juego, cuántos ha desbloqueado el usuario, cuántos le faltan y
+-- el porcentaje de progreso. Aparecen también las bibliotecas con 0
+-- logros (por eso el LEFT JOIN). Ordena de mayor a menor progreso.
+-- Técnicas: INNER JOIN, LEFT OUTER JOIN, subconsulta en el FROM,
+-- GROUP BY, COUNT, ROUND, ORDER BY.
+-- =====================================================================
+SELECT u.nickname                                         AS usuario,
+       vg.name                                            AS videojuego,
+       t.total_logros,
+       COUNT(la.id)                                       AS desbloqueados,
+       t.total_logros - COUNT(la.id)                      AS pendientes,
+       ROUND(100 * COUNT(la.id) / t.total_logros, 1)      AS porcentaje
+FROM   LIBVIDEOS l
+       INNER JOIN USERS       u  ON u.id  = l.USER_ID
+       INNER JOIN VIDEO_GAMES vg ON vg.id = l.VIDEO_GAME_ID
+       INNER JOIN (SELECT VIDEO_GAME_ID, COUNT(*) AS total_logros
+                   FROM   ACHIEVEMENTS
+                   GROUP BY VIDEO_GAME_ID) t ON t.VIDEO_GAME_ID = vg.id
+       LEFT OUTER JOIN LIB_ARCHIEVEMENTS la ON la.LIBVIDEOS_id = l.id
+GROUP BY u.nickname, vg.name, t.total_logros
+ORDER BY porcentaje DESC, u.nickname, vg.name;
+
+-- =====================================================================
+-- R3. RANKING DE AMIGOS
+-- Descripción: arma el círculo de amigos del usuario U001 (él mismo y
+-- todos sus amigos, sin importar quién agregó a quién) y los ordena por
+-- horas jugadas en total, mostrando también cuántos logros tiene cada
+-- uno. Quien empata en horas comparte la misma posición. Para otro
+-- círculo, cambiar 'U001' en las tres apariciones.
+-- Técnicas: CTE (WITH), UNION, LEFT OUTER JOIN, GROUP BY, SUM, COUNT,
+-- función analítica RANK, NVL.
+-- =====================================================================
+WITH circulo AS (
+    SELECT USERS_FRIEND_ID AS user_id FROM FRIENDSHIPS WHERE USERS_ID = 'U001'
+    UNION
+    SELECT USERS_ID        AS user_id FROM FRIENDSHIPS WHERE USERS_FRIEND_ID = 'U001'
+    UNION
+    SELECT id              AS user_id FROM USERS       WHERE id = 'U001'
+),
+horas AS (
+    SELECT l.USER_ID AS user_id, SUM(s.hours_played) AS total_horas
+    FROM   LIBVIDEOS l
+           INNER JOIN STATISTICS s ON s.LIBVIDEO_id = l.id
+    GROUP BY l.USER_ID
+),
+logros AS (
+    SELECT l.USER_ID AS user_id, COUNT(la.id) AS total_logros
+    FROM   LIBVIDEOS l
+           INNER JOIN LIB_ARCHIEVEMENTS la ON la.LIBVIDEOS_id = l.id
+    GROUP BY l.USER_ID
+)
+SELECT RANK() OVER (ORDER BY NVL(h.total_horas, 0) DESC) AS posicion,
+       u.nickname                                        AS usuario,
+       NVL(h.total_horas, 0)                             AS horas_jugadas,
+       NVL(g.total_logros, 0)                            AS logros_obtenidos
+FROM   circulo c
+       INNER JOIN USERS u ON u.id = c.user_id
+       LEFT OUTER JOIN horas  h ON h.user_id = c.user_id
+       LEFT OUTER JOIN logros g ON g.user_id = c.user_id
+ORDER BY posicion, u.nickname;
+
+-- =====================================================================
+-- R4. RESEÑAS Y CALIFICACIONES INTERNAS  (usa TOP)
+-- Descripción: los 10 juegos ACTIVOS mejor valorados por los usuarios:
+-- calificación promedio y número de reseñas. Los juegos sin reseñas
+-- también entran (LEFT JOIN) y quedan al final. Desempata por más
+-- reseñas y luego por nombre.
+-- Técnicas: LEFT OUTER JOIN, GROUP BY, COUNT, AVG, ROUND, ORDER BY,
+-- TOP-N con FETCH FIRST 10 ROWS ONLY (equivalente a TOP 10).
+-- =====================================================================
+SELECT vg.name                  AS videojuego,
+       COUNT(c.id)              AS numero_resenas,
+       ROUND(AVG(c.rating), 2)  AS calificacion_promedio
+FROM   VIDEO_GAMES vg
+       LEFT OUTER JOIN COMMENTS c ON c.VIDEO_GAMES_id = vg.id
+WHERE  vg.status = 'ACTIVO'
+GROUP BY vg.name
+ORDER BY calificacion_promedio DESC NULLS LAST, numero_resenas DESC, vg.name
+FETCH FIRST 10 ROWS ONLY;
